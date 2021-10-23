@@ -1,14 +1,14 @@
-import React from "react";
-
 import "./App.css";
 
-import Container from "./components/UI/PokemonContainer";
+import PokemonCard from "./components/PokemonCard";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World!</h1>
-      <Container />
+    <div className="app">
+      {Array.from({ length: 150 }).map((_, i) => {
+        const id = i + 1;
+        return <PokemonCard id={id} />;
+      })}
     </div>
   );
 }
