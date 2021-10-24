@@ -1,0 +1,11 @@
+#title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+}

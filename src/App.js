@@ -1,20 +1,11 @@
-import "./App.css";
-import logo from "./images/logo.png";
+import { useRoutes } from "hookrouter";
 
-import PokemonCard from "./components/PokemonCard";
+import "./App.css";
+import routes from "./router";
 
 function App() {
-  return (
-    <div className="app">
-      <section id="title">
-        <img className="logo" src={logo} alt="pokemon logo" />
-      </section>
-      {Array.from({ length: 150 }).map((_, i) => {
-        const id = i + 1;
-        return <PokemonCard id={id} key={id} />;
-      })}
-    </div>
-  );
+  const routeResult = useRoutes(routes);
+  return <div className="app">{routeResult || "404"}</div>;
 }
 
 export default App;

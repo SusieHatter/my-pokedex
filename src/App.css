@@ -6,22 +6,3 @@ body {
   background-image: url("./images/background.webp");
   background-attachment: fixed;
 }
-
-.app {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-#title {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.logo {
-  padding: 15%;
-  width: 50%;
-  height: auto;
-}
