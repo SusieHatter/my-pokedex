@@ -1,6 +1,14 @@
 .home-page {
+  padding: 25px;
+}
+
+.list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+}
+
+a {
+  text-decoration: none;
 }
