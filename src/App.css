@@ -1,6 +1,6 @@
 body {
   background-image: url("./images/background.webp");
-  background-repeat: repeat-y;
+  background-attachment: fixed;
 }
 
 .app {
