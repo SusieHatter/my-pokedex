@@ -1,0 +1,11 @@
+body {
+  background-image: url("./images/background.webp");
+  background-repeat: repeat-y;
+}
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
