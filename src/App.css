@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url("./images/background.webp");
   background-attachment: fixed;
@@ -10,10 +14,14 @@ body {
   gap: 10px;
 }
 
-.logo {
-  align-items: start;
+#title {
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
-  width: 100%;
+}
+
+.logo {
+  padding: 15%;
+  width: 50%;
   height: auto;
-  scale: 0.6;
 }
