@@ -8,8 +8,8 @@ export default function HomePage() {
       {Array.from({ length: 150 }).map((_, i) => {
         const id = i + 1;
         return (
-          <A href={`/pokemon/${id}`}>
-            <PokemonCard id={id} key={id} />
+          <A key={id} href={`/pokemon/${id}`}>
+            <PokemonCard id={id} />
           </A>
         );
       })}
