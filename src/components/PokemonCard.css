@@ -6,6 +6,7 @@
   text-align: center;
   width: 150px;
   padding: 2px;
+  transition: 0.5s;
 }
 
 .pokemon-card:hover {

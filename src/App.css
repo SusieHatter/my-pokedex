@@ -9,3 +9,11 @@ body {
   justify-content: center;
   gap: 10px;
 }
+
+.logo {
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  scale: 0.6;
+}
