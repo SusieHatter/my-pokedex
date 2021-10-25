@@ -1,4 +1,3 @@
-import { usePokemon } from "../hooks/pokemon";
 import "./PokemonCard.css";
 
 const mapTypeToColor = {
@@ -32,19 +31,15 @@ function displayName(name) {
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
-const PokemonCard = ({ id }) => {
-  const pokemon = usePokemon(id);
-  if (!pokemon) {
-    return <></>;
-  }
+const PokemonCard = ({ id, name, sprites, types }) => {
   return (
     <div
       className="pokemon-card"
-      style={{ backgroundColor: mapTypeToColor[pokemon.types[0].type.name] }}
+      style={{ backgroundColor: mapTypeToColor[types[0].type.name] }}
     >
-      <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+      <img src={sprites.front_default} alt={name} />
       <span>{displayNumber(id)}</span>
-      <h3>{displayName(pokemon.name)}</h3>
+      <h3>{displayName(name)}</h3>
     </div>
   );
 };

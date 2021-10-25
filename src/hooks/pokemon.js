@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getPokemon } from "../api/pokemon";
+import { getPokemon, getPokemons } from "../api/pokemon";
 
 export function usePokemon(id) {
   const [pokemon, setPokemon] = useState(undefined);
@@ -9,4 +9,14 @@ export function usePokemon(id) {
       .catch(() => setPokemon(undefined));
   }, [id]);
   return pokemon;
+}
+
+export function usePokemons(startID, endID) {
+  const [pokemons, setPokemons] = useState([]);
+  useEffect(() => {
+    getPokemons(startID, endID)
+      .then((pokemons) => setPokemons(pokemons))
+      .catch(() => setPokemons([]));
+  }, [startID, endID]);
+  return pokemons;
 }
