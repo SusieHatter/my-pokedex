@@ -2,7 +2,18 @@
   scroll-behavior: smooth;
 }
 
-body {
+body,
+html {
   background-image: url("./images/background.webp");
   background-attachment: fixed;
+  height: 100%;
+  margin: 0px;
+}
+
+.app {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }

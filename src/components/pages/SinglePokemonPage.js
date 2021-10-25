@@ -9,7 +9,13 @@ export default function SinglePokemonPage({ id }) {
   }
   return (
     <div className="pokemon-page">
-      <PokemonCard {...pokemon} />
+      <div className="card-container">
+        <PokemonCard {...pokemon} />
+      </div>
+      <div className="information">
+        <h1>Pokemon data</h1>
+        <p>{pokemon.species.name}</p>
+      </div>
     </div>
   );
 }
