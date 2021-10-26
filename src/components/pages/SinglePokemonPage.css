@@ -19,3 +19,16 @@
   height: 100%;
   width: 70%;
 }
+
+.pokemon-title {
+  width: 100%;
+}
+
+.biostatistics {
+  width: 50%;
+}
+
+.graph {
+  width: 50%;
+  float: right;
+}

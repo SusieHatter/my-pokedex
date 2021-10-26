@@ -19,7 +19,7 @@ const mapTypeToColor = {
   ice: "#35e6ecea",
 };
 
-function displayNumber(id) {
+export function displayNumber(id) {
   if (id < 100) {
     return "#0" + id;
   } else {
@@ -27,7 +27,7 @@ function displayNumber(id) {
   }
 }
 
-function displayName(name) {
+export function displayName(name) {
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
