@@ -24,6 +24,12 @@
   width: 100%;
 }
 
+.type-name {
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
 .biostatistics {
   width: 50%;
 }

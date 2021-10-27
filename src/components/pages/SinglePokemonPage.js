@@ -1,6 +1,7 @@
 import { usePokemon } from "../../hooks/pokemon";
+import { getTypeColor } from "../../utils/colors";
+import { displayName, displayNumber } from "../../utils/display";
 import PokemonCard from "../PokemonCard";
-import { displayName, displayNumber } from "../PokemonCard";
 import StatsChart from "../StatsChart";
 import "./SinglePokemonPage.css";
 
@@ -28,7 +29,18 @@ export default function SinglePokemonPage({ id }) {
         </div>
         <div>
           <div className="biostatistics">
-            <p>Type: {pokemon.types[0].type.name}</p>
+            <p>
+              Type:
+              {pokemon.types.map((t, i) => (
+                <span
+                  key={i}
+                  className="type-name"
+                  style={{ backgroundColor: getTypeColor(t) }}
+                >
+                  {t.type.name}
+                </span>
+              ))}
+            </p>
             <p>Height: {pokemon.height}</p>
             <p>Weight: {pokemon.weight}</p>
             <p>Stats:</p>
