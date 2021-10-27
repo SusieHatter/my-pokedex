@@ -1,61 +1,14 @@
 import { Radar } from "react-chartjs-2";
+import { getTypeColor } from "../utils/colors";
 
-/*
-[
-  {
-    "base_stat": 39,
-    "effort": 0,
-    "stat": {
-      "name": "hp",
-      "url": "https://pokeapi.co/api/v2/stat/1/"
-    }
-  },
-  {
-    "base_stat": 52,
-    "effort": 0,
-    "stat": {
-      "name": "attack",
-      "url": "https://pokeapi.co/api/v2/stat/2/"
-    }
-  },
-  {
-    "base_stat": 43,
-    "effort": 0,
-    "stat": {
-      "name": "defense",
-      "url": "https://pokeapi.co/api/v2/stat/3/"
-    }
-  },
-  {
-    "base_stat": 60,
-    "effort": 0,
-    "stat": {
-      "name": "special-attack",
-      "url": "https://pokeapi.co/api/v2/stat/4/"
-    }
-  },
-  {
-    "base_stat": 50,
-    "effort": 0,
-    "stat": {
-      "name": "special-defense",
-      "url": "https://pokeapi.co/api/v2/stat/5/"
-    }
-  },
-  {
-    "base_stat": 65,
-    "effort": 1,
-    "stat": {
-      "name": "speed",
-      "url": "https://pokeapi.co/api/v2/stat/6/"
-    }
-  }
-]
-*/
-
-function parsePokemonStatsToGraphData(stats) {
+function parsePokemonStatsToGraphData(stats, types) {
   const labels = [];
   const data = [];
+
+  for (let stat of stats) {
+    labels.push(stat.stat.name);
+    data.push(stat.base_stat);
+  }
 
   return {
     labels: labels,
@@ -63,8 +16,8 @@ function parsePokemonStatsToGraphData(stats) {
       {
         label: "Pokemon Stats",
         data: data,
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
-        borderColor: "rgba(255, 99, 132, 1)",
+        backgroundColor: getTypeColor(types, 0.2),
+        borderColor: getTypeColor(types),
         borderWidth: 1,
       },
     ],
@@ -77,7 +30,7 @@ const options = {
   },
 };
 
-export default function StatsChart({ stats }) {
-  const data = parsePokemonStatsToGraphData(stats);
+export default function StatsChart({ stats, types }) {
+  const data = parsePokemonStatsToGraphData(stats, types);
   return <Radar data={data} options={options} />;
 }

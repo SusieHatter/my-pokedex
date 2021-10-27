@@ -23,7 +23,7 @@ export default function SinglePokemonPage({ id }) {
             </h2>
           </div>
           <div className="graph">
-            <StatsChart stats={pokemon.stats} />
+            <StatsChart stats={pokemon.stats} types={pokemon.types} />
           </div>
         </div>
         <div>
