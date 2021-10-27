@@ -38,7 +38,7 @@ const PokemonCard = ({ id, name, sprites, types }) => {
       style={{ backgroundColor: mapTypeToColor[types[0].type.name] }}
     >
       <img src={sprites.front_default} alt={name} />
-      <span>{displayNumber(id)}</span>
+      <span className="pokemon-id">{displayNumber(id)}</span>
       <h3>{displayName(name)}</h3>
     </div>
   );

@@ -13,7 +13,7 @@
   scale: 1.1;
 }
 
-span {
+.pokemon-id {
   align-self: center;
   background-color: rgba(0, 0, 0, 0.212);
   border-radius: 50%;
