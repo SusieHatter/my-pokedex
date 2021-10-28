@@ -2,27 +2,10 @@ import { useState } from "react";
 import { usePokemon } from "../../hooks/pokemon";
 import { getTypeColor } from "../../utils/colors";
 import { displayName, displayNumber } from "../../utils/display";
+import { getSpriteNames } from "../../utils/sprites";
 import PokemonCard from "../PokemonCard";
 import StatsChart from "../StatsChart";
 import "./SinglePokemonPage.css";
-
-function getSpriteNames(sprites, prefix) {
-  // turn sprites object into an array of [spriteName, spriteUrl]
-  const spritesArray = Object.entries(sprites);
-  // filter out any items in that array, where spriteUrl === null OR spriteName !start_with "front"
-  const filteredSpritesArray = spritesArray.filter(
-    ([spriteName, spriteUrl]) => {
-      const spriteExists = spriteUrl !== null;
-      const isFrontSprite = spriteName.startsWith(prefix);
-      return spriteExists && isFrontSprite;
-    }
-  );
-  // once we have a list of valid [spriteName, spriteUrl], turn into an array of spriteName
-  const spriteNames = filteredSpritesArray.map(
-    ([spriteName, _spriteUrl]) => spriteName
-  );
-  return spriteNames;
-}
 
 export default function SinglePokemonPage({ id }) {
   const pokemon = usePokemon(id);
