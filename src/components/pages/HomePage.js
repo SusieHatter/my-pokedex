@@ -1,10 +1,19 @@
 import { A } from "hookrouter";
+import { useAsync } from "react-async";
 import PokemonCard from "../PokemonCard";
 import "./HomePage.css";
-import { usePokemons } from "../../hooks/pokemon";
+import { getPokemons } from "../../api/pokemon";
 
 export default function HomePage() {
-  const pokemons = usePokemons(1, 150);
+  const { data: pokemons, isPending } = useAsync(getPokemons, {
+    startID: 1,
+    endID: 150,
+  });
+
+  if (isPending) {
+    return <></>;
+  }
+
   return (
     <div className="home-page">
       <div className="list">
