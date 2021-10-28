@@ -20,21 +20,13 @@
   width: 70%;
 }
 
-.pokemon-title {
-  width: 100%;
-}
-
 .type-name {
   padding: 5px;
   margin-left: 5px;
   border-radius: 5px;
 }
 
-.biostatistics {
+.col {
   width: 50%;
-}
-
-.graph {
-  width: 50%;
-  float: right;
+  float: left;
 }

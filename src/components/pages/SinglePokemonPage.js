@@ -48,18 +48,11 @@ export default function SinglePokemonPage({ id }) {
         />
       </div>
       <div className="information">
+        <h2>
+          {displayNumber(pokemon.id)} {displayName(pokemon.name)}
+        </h2>
         <div>
-          <div className="pokemon-title">
-            <h2>
-              {displayNumber(pokemon.id)} {displayName(pokemon.name)}
-            </h2>
-          </div>
-          <div className="graph">
-            <StatsChart stats={pokemon.stats} types={pokemon.types} />
-          </div>
-        </div>
-        <div>
-          <div className="biostatistics">
+          <div className="col">
             <p>
               Type:
               {pokemon.types.map((t, i) => (
@@ -74,6 +67,9 @@ export default function SinglePokemonPage({ id }) {
             </p>
             <p>Height: {pokemon.height}</p>
             <p>Weight: {pokemon.weight}</p>
+          </div>
+          <div className="col">
+            <StatsChart stats={pokemon.stats} types={pokemon.types} />
           </div>
         </div>
       </div>
