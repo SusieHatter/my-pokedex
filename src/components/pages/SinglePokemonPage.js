@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAsync } from "react-async";
-import { getPokemon } from "../../api/pokemon";
+import { getEvolutionChain, getPokemon } from "../../api/pokemon";
 import { getTypeColor } from "../../utils/colors";
 import { displayName, displayNumber } from "../../utils/display";
 import { getSpriteNames } from "../../utils/sprites";
@@ -11,6 +11,7 @@ import "./SinglePokemonPage.css";
 export default function SinglePokemonPage({ id }) {
   const { data: pokemon, isPending } = useAsync(getPokemon, { id });
   const [spriteIndex, setSpriteIndex] = useState(0);
+  const { data: evolutionChain } = useAsync(getEvolutionChain, { id });
 
   if (isPending) {
     return <></>;

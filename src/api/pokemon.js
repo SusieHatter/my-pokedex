@@ -19,3 +19,14 @@ export const getPokemons = async ({ startID, endID }) => {
   }
   return Promise.all(promises);
 };
+
+export const getSpecies = async ({ id }) => {
+  const res = await fetch(`${BASE_URL}/pokemon-species/${id}`);
+  return res.json();
+};
+
+export const getEvolutionChain = async ({ id }) => {
+  const species = await getSpecies({ id });
+  const res = await fetch(species.evolution_chain.url);
+  return res.json();
+};
